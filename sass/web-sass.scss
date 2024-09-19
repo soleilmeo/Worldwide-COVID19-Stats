@@ -1,0 +1,72 @@
+@use "sass:math";
+@use "sass:list";
+
+.web-particle-container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	left: 0;
+}
+
+.web-particle {
+	position: absolute;
+	border-radius: 50%;
+}
+
+@for $i from 1 through 50 {
+	@keyframes particle-animation-#{$i} {
+		0% {
+			opacity: 0;
+		}
+		10% {
+			opacity: 1;
+		}
+		75% {
+			opacity: 0.75;
+		}
+		90% {
+			opacity: 0.5;
+		}
+		100% {
+			transform: translate3d((math.random(150) *  1vw), (math.random(150) * 1vh), (math.random(140) * 1px));
+			opacity: 0;
+		}
+	}
+
+	@keyframes slow-particle-animation-#{$i} {
+		0% {
+			opacity: 0;
+		}
+		1% {
+			opacity: 1;
+		}
+		75% {
+			opacity: 0.75;
+		}
+		90% {
+			opacity: 0.5;
+		}
+		100% {
+			transform: translate3d((math.random(100) *  1vw), (math.random(100) * 1vh), (math.random(110) * 1px));
+			opacity: 0;
+		}
+	}
+	
+	.web-particle:nth-child(#{$i}){
+		animation: particle-animation-#{$i} (math.random(10) + 10s) infinite;
+		$size: math.random(5) + 3 + px;
+		opacity: math.div(math.random(100), 100);
+		height: $size;
+		width: $size;
+		animation-delay: -$i * .2s;
+		transform: translate3d((math.random(90) * 1vw), (math.random(90) * 1vh), (math.random(100) * 1px));
+		background: list.nth(var(--light-blue) var(--primary), math.random(2));
+	}
+
+	@media (prefers-reduced-motion) {
+		.web-particle:nth-child(#{$i}){
+			animation: slow-particle-animation-#{$i} (math.random(10) + 70s) infinite;
+		}
+	}
+}

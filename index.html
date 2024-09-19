@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description"
+        content="View COVID-19 (Coronavirus) statistics and analytics for every affected country. Easy, simple and coherent." />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="web.css" />
+    <link rel="stylesheet" href="sass/web-sass.css" />
+
+    <title>COVID-19 Statistics - Worldwide</title>
+</head>
+
+<body class="overflow-hidden">
+    <div
+        class="loading-screen vh-100 vw-100 position-fixed fixed-top d-flex justify-content-center web-bg-darker web-no-interact web-opacity-tween overflow-hidden">
+        <div
+            class="d-flex flex-column justify-content-center align-content-center align-items-center mb-5 web-opacity-tween web-hidden">
+            <div class="web-allow-motion">
+                <div class="loadingio-spinner-dual-ring-kzz5bfnfj2b mb-3">
+                    <div class="ldio-x3frolallce">
+                        <div></div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="web-reduced-motion">
+                <div class="reduced-motion-loader mb-3">
+                    <div class="rml-circle"></div>
+                </div>
+            </div>
+
+            <h4 class="loading-text text-white text-center px-4 px-md-0">
+                Loading website...
+            </h4>
+        </div>
+    </div>
+
+    <div class="alert-something w-100 d-flex web-z-max-under-nav web-disable-capture web-hidden">
+        <div class="alert alert-danger w-100 mx-2" role="alert">
+            <button type="button" class="close position-fixed web-right-0 mr-4" data-dismiss="alert">
+                x
+            </button>
+            <strong>Unable to connect to certain API services</strong>
+            <p>
+                Some of the API services used in this project may have ceased
+                operation. This website will now use placeholder data instead.
+            </p>
+            <p>Loaded the following placeholder data:</p>
+            <ul class="loaded-placeholder-data-names"></ul>
+        </div>
+    </div>
+
+    <nav
+        class="navbar navbar-expand-lg navbar-dark web-bg-slightly-darker web-fixed-top-z-lower web-scroll-border-detect d-block">
+        <div class="container-fluid">
+            <a href="./index.html"><img src="images/covid19-logo.png" class="img-fluid web-max-w-128px web-min-w-64px navbar-brand" /></a>
+            <button class="navbar-toggler border-0" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="my-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Home<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#feedback-form"><i class="fa fa-plus-circle" aria-hidden="true"></i> Send
+                            Feedback<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="web-scroll-back-to-top web-opacity-tween web-hidden">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+
+    <div class="jumbotron pb-1 px-md-2 px-0 web-bg-darker">
+        <div class="position-relative">
+            <div class="web-particle-container pb-5 bg-world">
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="web-particle"></div>
+                <div class="row">
+                    <div class="col-md-6 mx-auto pt-5">
+                        <div class="d-flex container flex-column justify-content-center align-items-center">
+                            <div class="web-dropdown web-block-hover-on-click">
+                                <button
+                                    class="region-dropdown-button lead web-dropdown-toggle web-block-hover-click-target web-bg-slightly-darker-hoverable border-0 text-white mb-1 px-5 py-2 rounded-pill web-light-outline web-max-vw-75 text-break"
+                                    type="button">
+                                    <i class="fa fa-globe"></i><span class="web-text-fluid-lead ml-3"> Worldwide</span>
+                                </button>
+
+                                <div class="d-flex flex-column align-items-center">
+                                    <div
+                                        class="region-dropdown web-dropdown-menu d-flex flex-column web-bg-slightly-darker text-white border-dark rounded-left rounded-right web-height-tween web-z-max-under-nav web-width-md-nice-fit">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="lead text-white text-center">Coronavirus Cases</p>
+                            <div class="d-md-block d-flex flex-column align-items-center">
+                                <h1 class="display-4 text-white font-weight-bold text-center web-text-fluid px-4 px-md-0"
+                                    id="banner-confirmed-cases">
+                                    No Data
+                                </h1>
+                            </div>
+                        </div>
+
+                        <div
+                            class="d-flex container flex-lg-row flex-column align-content-lg-around justify-content-lg-around align-content-center justify-content-center">
+                            <div
+                                class="containter mr-lg-4 mr-0 mt-3 text-lg-left text-center d-md-block d-flex flex-column align-items-center">
+                                <p class="lead text-white">Deaths</p>
+                                <h1 class="display-4 text-white font-weight-bold web-text-fluid-mini deaths-value px-4 px-md-0"
+                                    id="banner-deaths">
+                                    No Data
+                                </h1>
+                            </div>
+
+                            <div
+                                class="containter ml-lg-4 ml-0 mt-3 text-lg-right text-center d-md-block d-flex flex-column align-items-center">
+                                <p class="lead text-white">Recovered</p>
+                                <h1 class="display-4 text-white font-weight-bold web-text-fluid-mini recovered-value px-4 px-md-0"
+                                    id="banner-recoveries">
+                                    No Data
+                                </h1>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4 mb-2 justify-content-around">
+                            <div class="col-md-4 col-3">
+                                <div class="d-flex container flex-column justify-content-center align-items-center">
+                                    <p class="lead text-white text-center"
+                                        title="Percentage of recoveries over total confirmed cases.">
+                                        Recovery Rate
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-3">
+                                <div class="d-flex container flex-column justify-content-center align-items-center">
+                                    <p class="lead text-white text-center"
+                                        title="Percentage of deaths over total confirmed cases.">
+                                        Fatality Rate
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-3">
+                                <div class="d-flex container flex-column justify-content-center align-items-center">
+                                    <p class="lead text-white text-center"
+                                        title="Percentage of known cases that are currently possibly infected.">
+                                        Active Cases
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-around text-center">
+                            <div class="col-md-4 col-3 mb-3">
+                                <div class="d-flex justify-content-center">
+                                    <h1 class="display-4 text-white font-weight-bold text-center web-text-fluid-h4"
+                                        id="banner-recover-rate">
+                                        N/A
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-3 mb-3">
+                                <div class="d-flex justify-content-center">
+                                    <h1 class="display-4 text-white font-weight-bold text-center web-text-fluid-h4"
+                                        id="banner-fatality-rate">
+                                        N/A
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-3 mb-3">
+                                <div class="d-flex justify-content-center">
+                                    <h1 class="display-4 text-white font-weight-bold text-center web-text-fluid-h4"
+                                        id="banner-current-cases">
+                                        N/A
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column justify-content-center align-items-center text-white mt-3">
+                            <a class="btn btn-secondary mb-3 px-4 py-2" href="#checkpoint-history-chart"><i
+                                    class="fa fa-chart-line"></i> View Historical Data</a>
+
+                            <p class="web-color-light-gray text-center web-tooltip" id="last-update">
+                                Last update: 2020-01-01 00:00 GMT
+                                <span class="web-tooltiptext">Something went wrong with this particular widget.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column mt-4 web-bg-darker">
+        <div class="outline-bar"></div>
+
+        <div
+            class="d-flex container flex-lg-row flex-column text-white p-3 web-bg-darker justify-content-between align-items-center align-content-center">
+            <img src="images/svg/health.svg" class="img-fluid web-max-w-240px" />
+            <div class="flex-fill flex-grow-1 pl-lg-4 pl-0">
+                <p class="lead" id="local-status-report">
+                    There is a total of
+                    <span class="web-big-boy">${data_totalCases}</span> confirmed cases
+                    of COVID-19 in ${countryData.name.common}.<br />
+                </p>
+            </div>
+        </div>
+
+        <div class="outline-bar"></div>
+    </div>
+
+    <div id="checkpoint-history-chart"></div>
+
+    <!--Chart data-->
+    <div class="container position-relative w-100 overflow-hidden mt-5 mb-3 web-bg-darker">
+        <div class="d-flex flex-column align-items-center justify-content-center mb-5 mt-5 text-white align-middle">
+            <h1 class="web-text-center">Historical Data</h1>
+            <div class="alert alert-warning w-75 mt-3" role="alert">
+                <button type="button" class="close web-right-0" data-dismiss="alert">
+                    x
+                </button>
+
+                <strong>Our source (JHE) has stopped collecting new data as of March 10, 2023.</strong>
+                <span>For more information, please visit <a href="https://coronavirus.jhu.edu">John Hopkins Coronavirus Resource Center</a>. For the latest and more accurate statistics, visit <a href="https://covid19.who.int">WHO's Coronavirus Dashboard</a>.</span>
+            </div>
+
+            <!--country-->
+            <div class="web-option-switch-container web-option-switch-container-fancy d-flex flex-md-row flex-column justify-content-center align-content-center web-whitespace-normal mt-3" id="history-country-options">
+                <button class="web-option-switch web-option-switch-enabled web-option-switch-fancy lead" data-option-group="history-country" data-id=""><span>Worldwide</span></button>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column align-items-center justify-content-center mb-5 text-white align-middle">
+            <h2 class="web-text-center">Coronavirus Cases</h2>
+            <!--switch setup-->
+            <div class="w-100 bg-transparent d-flex flex-column align-items-center justify-content-center">
+                <label class="position-relative web-button-switch-container" for="cases-switch-daily">
+                    <input type="checkbox" class="web-button-switch-checkbox web-z-2" id="toggle-diff-cases"></input>
+                    <div class="d-flex flex-row align-content-center align-items-center justify-content-around flex-fill web-button-switch web-z-1">
+                        <div class="web-button-switch-begin flex-grow-0"></div>
+                        <div class="web-button-switch-head flex-grow-1">
+                            <p class="web-text-bold">Changes</p>
+                            <p class="web-text-bold">Total</p>
+                        </div>
+                        <div class="web-button-switch-end flex-grow-0"></div>
+                    </div>
+                    <div class="position-absolute web-top-0 web-z-0 w-100 h-100">
+                        <p class="position-absolute web-color-darker web-left-1 web-top-0 web-text-heavy h-100 align-baseline d-table"><span class="d-table-cell web-valign-middle"><i class="fa fa-play fa-flip-horizontal"></i></span></p>
+                        <p class="position-absolute web-color-darker web-right-1 web-top-0 web-text-heavy h-100 d-table"><span class="d-table-cell web-valign-middle"><i class="fa fa-play"></i></span></p>
+                    </div>
+                </label>
+
+                <div class="web-option-switch-container web-option-switch-container-fancy web-option-switch-fancy-nocolumn d-flex flex-row flex-wrap justify-content-center align-content-center web-whitespace-normal mt-3" id="history-time-cases-options">
+                    <button class="web-option-switch web-option-switch-enabled web-option-switch-fancy flex-fill flex-grow-1 chart-period-align-fix" data-option-group="history-time-cases" data-id="weekly">Weekly</button>
+                    <button class="web-option-switch web-option-switch-fancy flex-fill flex-grow-1 chart-period-align-fix" data-option-group="history-time-cases" data-id="monthly">Monthly</button>
+                    <button class="web-option-switch web-option-switch-fancy flex-fill flex-grow-1 chart-period-align-fix" data-option-group="history-time-cases" data-id="annually">Annually</button>
+                    <button class="web-option-switch web-option-switch-fancy flex-fill flex-grow-1 chart-period-align-fix" data-option-group="history-time-cases" data-id="all-time">All Time</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container chart-data position-absolute web-h-ratio-16-9 w-100 web-bg-black web-opacity-half web-opacity-tween" style="transform: translateY(-3%); left: 0;" id="history-cases-overlay">
+            <!--TODO: setup overlays for charts to show that they are doing some tasks. Idea: add chart-data-overlay class and specify data attribute showing relationship to a canvas such as "history-cases"-->
+            <p class="chart-status d-table text-white text-center w-100 h-100">Loading</p>
+        </div>
+
+        <div class="container chart-data web-h-ratio-16-9 w-100 mb-5 px-0 px-md-3">
+            <canvas id="history-cases"></canvas>
+        </div>
+
+        <hr class="web-bg-black w-100"/>
+        
+        <div class="d-flex flex-column align-items-center justify-content-center mt-5 mb-5 text-white align-middle">
+            <h2 class="web-text-center">Coronavirus Deaths</h2>
+            <!--switch setup-->
+            <div class="w-100 bg-transparent d-flex flex-column align-items-center justify-content-center">
+                <label class="position-relative web-button-switch-container" for="cases-switch-daily">
+                    <input type="checkbox" class="web-button-switch-checkbox web-z-2" id="toggle-diff-deaths"></input>
+                    <div class="d-flex flex-row align-content-center align-items-center justify-content-around flex-fill web-button-switch web-z-1">
+                        <div class="web-button-switch-begin flex-grow-0"></div>
+                        <div class="web-button-switch-head flex-grow-1">
+                            <p class="web-text-bold">Changes</p>
+                            <p class="web-text-bold">Total</p>
+                        </div>
+                        <div class="web-button-switch-end flex-grow-0"></div>
+                    </div>
+                    <div class="position-absolute web-top-0 web-z-0 w-100 h-100">
+                        <p class="position-absolute web-color-darker web-left-1 web-top-0 web-text-heavy h-100 align-baseline d-table"><span class="d-table-cell web-valign-middle"><i class="fa fa-play fa-flip-horizontal"></i></span></p>
+                        <p class="position-absolute web-color-darker web-right-1 web-top-0 web-text-heavy h-100 d-table"><span class="d-table-cell web-valign-middle"><i class="fa fa-play"></i></span></p>
+                    </div>
+                </label>
+
+                <div class="web-option-switch-container web-option-switch-container-fancy web-option-switch-fancy-nocolumn d-flex flex-row flex-wrap justify-content-center align-content-center web-whitespace-normal mt-3" id="history-time-deaths-options">
+                    <button class="web-option-switch web-option-switch-enabled web-option-switch-fancy flex-fill flex-grow-1 chart-period-align-fix" data-option-group="history-time-deaths" data-id="weekly">Weekly</button>
+                    <button class="web-option-switch web-option-switch-fancy flex-fill flex-grow-1 chart-period-align-fix" data-option-group="history-time-deaths" data-id="monthly">Monthly</button>
+                    <button class="web-option-switch web-option-switch-fancy flex-fill flex-grow-1 chart-period-align-fix" data-option-group="history-time-deaths" data-id="annually">Annually</button>
+                    <button class="web-option-switch web-option-switch-fancy flex-fill flex-grow-1 chart-period-align-fix" data-option-group="history-time-deaths" data-id="all-time">All Time</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container chart-data position-absolute web-h-ratio-16-9 w-100 web-bg-black web-opacity-half web-opacity-tween" style="transform: translateY(-3%); left: 0;" id="history-deaths-overlay">
+            <!--TODO: setup overlays for charts to show that they are doing some tasks. Idea: add chart-data-overlay class and specify data attribute showing relationship to a canvas such as "history-cases"-->
+            <p class="chart-status d-table text-white text-center w-100 h-100"><span class="d-table-cell">Sorry, something went wrong.</span></p>
+        </div>
+
+        <div class="container chart-data web-h-ratio-16-9 w-100 mb-5">
+            <canvas id="history-deaths"></canvas>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column container mt-5 px-md-5 px-3 text-white">
+        <h2 class="text-white web-text-fluid-h2-wrap">
+            Possible Symptoms of COVID-19
+        </h2>
+        <div class="text-white p-3 web-bg-darker mt-3">
+            <ul class="list card-columns m-3">
+                <li>Fever or chills</li>
+                <li>Cough</li>
+                <li>Shortness of breath or difficulty breathing</li>
+                <li>Fatigue</li>
+                <li>Muscle or body aches</li>
+                <li>Headache</li>
+                <li>New loss of taste or smell</li>
+                <li>Sore throat</li>
+                <li>Congestion or runny nose</li>
+                <li>Nausea or vomiting</li>
+                <li>Diarrhea</li>
+            </ul>
+        </div>
+        <div class="mt-3 p-3">
+            <p>
+                <strong>This list does not include all possible symptoms.</strong>
+                Symptoms may change with new COVID-19 variants and can vary depending
+                on vaccination status. <br /><br />
+                If you are experiencing any of these symptoms, consider the following
+                options:
+            </p>
+            <ul class="list">
+                <li>Get tested for COVID-19</li>
+                <li>
+                    If you have already tested positive for COVID-19, learn more about
+                    CDC’s
+                    <a class="web-color-light-blue"
+                        href="https://www.cdc.gov/coronavirus/2019-ncov/your-health/isolation.html">isolation
+                        guidance</a>
+                    (This will take you to CDC's website)
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="web-bg-darker w-100 mt-5 py-3 mb-3">
+        <div class="container d-flex flex-lg-row flex-column align-items-center justify-content-lg-around mb-5">
+            <img class="img-fluid web-w-lg-50 w-75" src="images/svg/makeareport.svg"></img>
+            <div class="container d-flex flex-column text-white py-lg-3 py-0">
+                <h4 class="display-4 text-center">Stay Updated</h4>
+                <p class="lead text-center">Subscribe to our newsletter for latest updates about the Coronavirus (COVID-19) disease around the world. You can choose to unsubscribe at any time.</p>
+
+                <label for="email">Email Address<span id="email-subscribe-notice"></span></label>
+                <input type="email" class="form-control" id="email-subscribe-field" name="email" placeholder="example@email.com">
+                <a class="btn btn-secondary mt-3" id="email-subscribe-btn">Submit</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+
+    <!-- Feedback Modal. Test model sends feedback data to https://c19webfeedback.requestcatcher.com (Open this link, then host this web project, then provide feedback, then look back at the requestcatcher site to see POSTed data)-->
+    <div class="modal fade" id="feedback-form" tabindex="-1" role="dialog" aria-labelledby="feedbackFormLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content web-bg-darker text-white web-darker-border">
+                <div class="modal-header web-darker-border-b">
+                    <h5 class="modal-title" id="feedbackFormLabel">
+                        <i class="fa fa-mail-bulk" aria-hidden="true"></i> Feedback
+                    </h5>
+                </div>
+                <div class="modal-body" id="feedback-input-body">
+                    <input type="text" class="form-control feedback-title web-bg-darker web-darker-border text-white mb-2 web-transform-tween" name="title" maxlength="500" placeholder="Feedback title"/>
+    
+                    <textarea name="body" class="form-control feedback-contents web-bg-darker web-darker-border text-white mb-2 web-resize-none web-transform-tween" rows="10" placeholder="Provide your feedback here..."></textarea>
+
+                    <label>Email Address (Optional)<span id="feedback-email-notice"></span></label>
+                    <input type="text" class="form-control feedback-your-email web-bg-darker web-darker-border text-white web-transform-tween" name="email" placeholder="name@example.com"/>
+                </div>
+                <div class="modal-footer web-darker-border-t">
+                    <span id="feedback-status-notice"></span>
+                    <button type="button" class="create-close btn btn-secondary" data-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-light" id="feedback-submit"><i class="fa fa-arrow-circle-o-up"></i> Send Feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="feedback-submitted" tabindex="-1" role="dialog" aria-labelledby="feedbackDoneLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content web-bg-darker text-white web-darker-border">
+                <div class="modal-header web-darker-border-b">
+                    <h5 class="modal-title" id="feedbackDoneLabel">
+                        <i class="fa fa-mail-bulk" aria-hidden="true"></i> Feedback
+                    </h5>
+                </div>
+                <div class="modal-body" id="feedback-submitted-body">
+                    <p>
+                        Thank you for your feedback! For additional inquiries, please contact <a class="web-color-light-blue" style="cursor: pointer;" onclick="tryGoTo('./email.html')">2159015@example.com</a>.
+                    </p>
+                </div>
+                <div class="modal-footer web-darker-border-t">
+                    <button type="button" class="create-close btn btn-secondary" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="web-bg-darker">
+        <div class="container text-white text-center">
+            <p class="web-color-light-gray">Designed &amp; Developed by 2159015 and 2159026.<br/>Data source from worldometer.info<br/>Chart source from John Hopkins University<br/>Final Group Project 2023 for ITEC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src=" https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js "></script>
+    <script src="./src-js/fitty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+    <!--use minified versions of our scripts-->
+    <script src="web.min.js"></script>
+    <script src="main.min.js"></script>
+</body>
+
+</html>
